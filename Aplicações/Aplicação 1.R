@@ -83,8 +83,13 @@ wp(fit2)
 
 # Modelo 3
 
-fit3=gamlss(Number~Age+Treatment, sigma.formula = ~ Treatment,
-            family=NBI(mu.link = "log",sigma.link = "log"));summary(fit3)
+fit3=gamlss(Number~Age+Treatment,
+            sigma.formula = ~ Treatment,
+            family=NBI(
+              mu.link = "log",
+              sigma.link = "log"
+              )
+            );summary(fit3)
 
 plot(fit3, par=newpar)
 plot(fit3)
